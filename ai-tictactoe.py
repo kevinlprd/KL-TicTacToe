@@ -1,6 +1,7 @@
 # Tic Tac Toe
 
 import random
+import os
 
 def drawBoard(board):
     # This function prints out the board that it was passed.
@@ -146,16 +147,19 @@ while True:
     while gameIsPlaying:
         if turn == 'player':
             # Player’s turn.
+            os.system("cls")
             drawBoard(theBoard)
             move = getPlayerMove(theBoard)
             makeMove(theBoard, playerLetter, move)
 
             if isWinner(theBoard, playerLetter):
+                os.system("cls")
                 drawBoard(theBoard)
                 print('Hooray! You have won the game!')
                 gameIsPlaying = False
             else:
                 if isBoardFull(theBoard):
+                    os.system("cls")
                     drawBoard(theBoard)
                     print('The game is a tie!')
                     break
@@ -168,11 +172,13 @@ while True:
             makeMove(theBoard, computerLetter, move)
 
             if isWinner(theBoard, computerLetter):
+                os.system("cls")
                 drawBoard(theBoard)
                 print('The computer has beaten you! You lose.')
                 gameIsPlaying = False
             else:
                 if isBoardFull(theBoard):
+                    os.system("cls")
                     drawBoard(theBoard)
                     print('The game is a tie!')
                     break
